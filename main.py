@@ -5,13 +5,13 @@ url = "https://api-football-beta.p.rapidapi.com/fixtures/players"
 querystring = {"fixture":"169080"}
 
 headers = {
-	"X-RapidAPI-Key": "c6bab7bca8msh2a39bde2c4f0eaep174ccdjsnbeb0413db65d",
+	"X-RapidAPI-Key": "33f1e04db2msh82bd5edcc89cedbp192013jsn519016419896",
 	"X-RapidAPI-Host": "api-football-beta.p.rapidapi.com"
 }
 
-response = requests.request("GET", url, headers=headers, params=querystring)
+response = requests.request("GET", url, headers=headers, params=querystring).json()
 
-print(response.text)
+
 team_name = response['response'][0]['team']['name']
 team_logo = response['response'][0]['team']['logo']
 player_name = response['response'][1]['players'][0]['player']['name']
